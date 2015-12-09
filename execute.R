@@ -21,7 +21,6 @@ m = rating_data$rating
 L = length(m)
 row_index = rating_data$id
 col_index = rating_data$item
-d = 2
 
 # # additional prior parameters
 alpha = 2
