@@ -37,10 +37,12 @@ matrix_fit <- stan(file="matrix.stan",
 
 # construct matrix
 m_out <- create_matrix(m,row_index,col_index,N,M)
+m_test <- create_matrix(test_data$rating,test_data$id,test_data$item,N,M)
 # find mean
 matrix_fit_df <- as.data.frame(matrix_fit)
 m_pred <- gen_prediction(matrix_fit_df, N, M, d)
-mse_pred <- calc_mse(m_out,m_pred)
+mse_construct <- calc_mse(m_out,m_pred)
+mse_pred <- calc_mse(m_test,m_pred)
 
 # mu_u <- gen_out_matrix(matrix_fit_mean, "mu_u", d, 1)
 # sigma_u <- gen_out_matrix(matrix_fit_mean, "sigma_u", d, d)

@@ -17,7 +17,7 @@ create_matrix <- function(m,row_index,col_index,N,M) {
 df_col_mean <- function(df) {
   df_out <- df[1,]
   for (i in 1:ncol(df)) {
-    df_out[,i] <- median(df[,i])
+    df_out[,i] <- mean(df[,i])
   }
   return(df_out)
 }
