@@ -25,7 +25,7 @@ col_index = rating_data$item
 # # additional prior parameters
 alpha = 2
 beta_0 = 1
-mu_0 = as.vector(rep(2,d))
+mu_0 = as.vector(rep(mu_init,d))
 nu_0 = d
 W_0 = diag(d)
 
